@@ -32,8 +32,8 @@
             return {
                 prices: [],
                 totalPrice: 0,
-                numPages: '',
-                numLanguages: ''
+                numPages: '1',
+                numLanguages: '1'
             }
         },
         methods: {
@@ -43,12 +43,17 @@
                     this.totalPrice += price;
                 });
                 console.log(this.numPages);
+                if (this.prices.includes(500)) {
+                    this.totalPrice += this.numPages * this.numLanguages * 30;
+                }
             },
             updateNumPages(updatedNumPages) {
                 this.numPages = updatedNumPages;
+                this.updateTotal();
             },
             updateNumLanguages(updatedNumLanguages) {
                 this.numLanguages = updatedNumLanguages;
+                this.updateTotal();
             }
         }
     }

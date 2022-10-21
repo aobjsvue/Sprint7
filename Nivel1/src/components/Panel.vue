@@ -7,7 +7,6 @@
         <label>Nombre d'idiomes </label>
         <input type="text" v-model="numLanguages" @input="changeNumLanguages()" required/>
     </div>
-    <p>{{ numPages }} {{ numLanguages}}</p>
 </template>
 
 <script>
