@@ -6,7 +6,7 @@
                 <input type="checkbox" :value="500" v-model="prices" @change="updateTotal" />
                 <label>Una pàgina web (500€)</label>
             </div>
-            <Panel @changeNumPages="updateNumPages($event)" @changeNumLanguages="updateNumLanguages($event)" />
+            <Panel @changeNumPages="updateNumPages" @changeNumLanguages="updateNumLanguages" />
             <div>
                 <input type="checkbox" :value="300" v-model="prices" @change="updateTotal" />
                 <label>Una consultoria SEO (300€)</label>
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-    import Panel from './Panel.vue';
+    import Panel from "./Panel.vue";
     
     export default {
-        name: 'Home',
+        name: "Home",
         components: {
             Panel
         },
@@ -32,8 +32,8 @@
             return {
                 prices: [],
                 totalPrice: 0,
-                numPages: '1',
-                numLanguages: '1'
+                numPages: 1,
+                numLanguages: 1
             }
         },
         methods: {
@@ -42,7 +42,6 @@
                 this.prices.forEach((price) => {
                     this.totalPrice += price;
                 });
-                console.log(this.numPages);
                 if (this.prices.includes(500)) {
                     this.totalPrice += this.numPages * this.numLanguages * 30;
                 }

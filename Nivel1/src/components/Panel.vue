@@ -1,31 +1,28 @@
 <template>
     <div>
         <label>Nombre de pàgines </label>
-        <input type="text" v-model="numPages" @input="changeNumPages()" required/>
+        <Buttons @changeQuantity="changeNumPages" />
     </div>
     <div>
         <label>Nombre d'idiomes </label>
-        <input type="text" v-model="numLanguages" @input="changeNumLanguages()" required/>
+        <Buttons @changeQuantity="changeNumLanguages"/>
     </div>
 </template>
 
 <script>
-export default {
-    name: 'Panel',
-    emits: ['changeNumPages', 'changeNumLanguages'],
-    data() {
-        return {
-            numPages: '1',
-            numLanguages: '1'
-        }
-    },
-    methods: {
-        changeNumPages() {
-            this.$emit('changeNumPages', this.numPages);
-        },
-        changeNumLanguages() {
-            this.$emit('changeNumLanguages', this.numLanguages);
+    import Buttons from "./Buttons.vue";
+
+    export default {
+        name: "Panel",
+        emits: ["changeNumPages", "changeNumLanguages"],
+        components: { Buttons },
+        methods: {
+            changeNumPages(updateQuantity) {
+                this.$emit("changeNumPages", updateQuantity);
+            },
+            changeNumLanguages(updateQuantity) {
+                this.$emit("changeNumLanguages", updateQuantity);
+            }
         }
     }
-}
 </script>
