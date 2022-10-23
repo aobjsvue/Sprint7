@@ -2,6 +2,9 @@
   <div>
     <Home />
   </div>
+  <router-link to="/">
+    <button type="button">Tornar enrere</button>
+  </router-link>
 </template>
 
 <script>
