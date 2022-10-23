@@ -1,10 +1,10 @@
 <template>
     <div>
         <Welcome />
+        <router-link to="/home">
+            <button type="button">A la calculadora!</button>
+        </router-link>
     </div>
-    <router-link to="/home">
-        <button type="button">A la calculadora!</button>
-    </router-link>
 </template>
 
 <script>

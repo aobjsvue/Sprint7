@@ -1,22 +1,22 @@
 <template>
     <div>
-        <p>Què vols fer?</p>
-        <form>
-            <div>
-                <input type="checkbox" :value="500" v-model="prices" @change="updateTotal" />
-                <label>Una pàgina web (500€)</label>
+        <p class="question">Què vols fer?</p>
+        <b-form>
+            <div class="options">
+                <input type="checkbox" :value="500" v-model="prices" @change="updateTotal" v-b-toggle.collapse-1 />
+                <label class="labelText">Una pàgina web (500€)</label>
             </div>
             <Panel @changeNumPages="updateNumPages" @changeNumLanguages="updateNumLanguages" />
-            <div>
+            <div class="options">
                 <input type="checkbox" :value="300" v-model="prices" @change="updateTotal" />
-                <label>Una consultoria SEO (300€)</label>
+                <label class="labelText">Una consultoria SEO (300€)</label>
             </div>
-            <div>
+            <div class="options">
                 <input type="checkbox" :value="200" v-model="prices" @change="updateTotal" />
-                <label>Una campanya de Google Ads (200€)</label>
+                <label class="labelText">Una campanya de Google Ads (200€)</label>
             </div>
-        </form>
-        <p>Preu: {{ totalPrice }}€</p>
+            <p class="options">Preu: {{ totalPrice }}€</p>
+        </b-form>
     </div>
 </template>
 
@@ -57,3 +57,23 @@
         }
     }
 </script>
+
+<style>
+    .labelText {
+        padding-left: 0.5em;
+        margin: 0;
+    }
+    .options {
+        display: flex;
+        width: 289px;
+        margin: 0.3em 0;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .question {
+        margin-top: 2em;
+    }
+</style>
