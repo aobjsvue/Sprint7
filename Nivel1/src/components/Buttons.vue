@@ -47,6 +47,8 @@
         border-color: transparent;
         box-shadow: none;
         padding: 0.2em 0.3em 0 0.3em;
+        margin-top: 0;
+        margin-right: 0.3em;
     }
     .buttonsInput {
         display: flex;
