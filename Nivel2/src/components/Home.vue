@@ -27,12 +27,12 @@
             <p class="questions">Vol desar el pressupost per a futures consultes, fer-ne un de nou i poder comparar-los i compartir-los fàcilment? Ompli els següents camps!</p>
 
             <div class="budget-form">
-                <label class="label-project">Nom per al pressupost</label>
-                <input type="text" v-model="projectName" />
+                <label class="label-budget">Nom per al pressupost</label>
+                <input type="text" v-model="budgetName" />
             </div>
 
             <div class="budget-form">
-                <label class="label-project">El seu nom</label>
+                <label class="label-budget">El seu nom</label>
                 <input type="text" v-model="userName" />
             </div>
 
@@ -69,7 +69,7 @@
                 numPages: 1,
                 numLanguages: 1,
                 userName: "",
-                projectName: "",
+                budgetName: "",
                 budgetList: []
             }
         },
@@ -93,7 +93,7 @@
             },
             handleSubmit() {
                 this.budgetList.push({
-                    project: this.projectName,
+                    budget: this.budgetName,
                     user: this.userName,
                     webpage: this.prices.includes(500),
                     numPages: this.numPages,
@@ -101,10 +101,10 @@
                     seoconsulting: this.prices.includes(300),
                     adscampaign: this.prices.includes(200),
                     price: this.totalPrice,
-                    date: new Date().toLocaleDateString()
+                    date: Date.now()
                 });
                 this.userName = "";
-                this.projectName = "";
+                this.budgetName = "";
             }
         }
     }
@@ -132,7 +132,7 @@
     .budget-form {
         margin-bottom: 1em;
     }
-    .label-project{
+    .label-budget{
         width: 142px;
     }
     .btn-success {
