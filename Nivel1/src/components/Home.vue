@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import Panel from "./Panel.vue";
+    import Panel from "./Panel.vue"
     
     export default {
         name: "Home",
