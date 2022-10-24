@@ -1,9 +1,6 @@
 <template>
-  <div>
+  <div id="home-view">
     <Home />
-    <router-link to="/">
-      <button type="button">Tornar enrere</button>
-    </router-link>
   </div>
 </template>
 
@@ -18,9 +15,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  button {
-    margin-top: 0.7em;
-  }
-</style>

@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <b-collapse id="collapse-1" class="">
-            <b-card border-variant="dark" class="mt-2 mb-3 py-3">
+    <b-col cols="10" id="panel">
+        <b-collapse id="collapse-1">
+            <b-card border-variant="dark">
                 <div class="cardContent">
                     <b-card-text class="m-0">Nombre de pàgines</b-card-text>
                     <Buttons @changeQuantity="changeNumPages" />
@@ -20,7 +20,7 @@
                 </div>
             </b-card>
         </b-collapse>
-    </div>
+    </b-col>
 </template>
 
 <script>
@@ -42,7 +42,9 @@
 </script>
 
 <style>
-    .card {
+    #panel {
+        margin: 0.3em 0;
+    }.card {
         border-width: 2px;
         border-radius: 1em;
     }
@@ -52,8 +54,7 @@
         justify-content: center;
     }
     .card-text {
-        padding-right: 0.5em;
-        width: 150px;
+        width: 123px;
     }
     .bi-info {
         cursor: pointer;
@@ -75,7 +76,7 @@
         padding: 2em;
     }
     .modal-dialog {
-        max-width: 660px;
+        max-width: 700px;
     }
     .helpText {
         margin: 0;

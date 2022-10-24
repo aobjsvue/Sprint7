@@ -1,9 +1,6 @@
 <template>
-    <div>
+    <div id="welcome-view">
         <Welcome />
-        <router-link to="/home">
-            <button type="button">A la calculadora!</button>
-        </router-link>
     </div>
 </template>
 

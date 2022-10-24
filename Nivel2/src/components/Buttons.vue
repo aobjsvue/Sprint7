@@ -1,7 +1,7 @@
 <template>
-    <div class="buttonsInput">
+    <div id="input-buttons">
         <b-button type="button" @click="increase"><b-icon icon="plus"></b-icon></b-button>
-        <b-form-input type="text" v-model="quantity" size="sm" class="inputStyles" />
+        <b-form-input type="text" v-model="quantity" size="sm" class="input-style" />
         <b-button type="button" @click="decrease"><b-icon icon="dash"></b-icon></b-button>
     </div>
 </template>
@@ -31,27 +31,26 @@
     }
 </script>
 
-<style>
-    .inputStyles {
+<style scoped>
+    .input-style {
         width: 3em;
         border-color: transparent;
         text-align: center;
     }
-    .inputStyles:focus {
+    .input-style:focus {
         border-color: black;
         border-width: 2px;
         box-shadow: none;
     }
-    .btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
+    .btn-secondary, .btn-secondary:hover:focus:active {
         background-color:#f67754;
         border-color: transparent;
         box-shadow: none;
-        padding: 0.2em 0.3em 0 0.3em;
-        margin-top: 0;
-        margin-right: 0.3em;
+        padding: 0 0.2em;
     }
-    .buttonsInput {
+    #input-buttons {
         display: flex;
         align-items: center;
+        margin-right: 0.3em;
     }
 </style>
