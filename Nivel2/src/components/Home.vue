@@ -2,52 +2,52 @@
     <b-container fluid id="home">
         <b-row>
             <b-col cols="4">
-            <form @submit.prevent="handleSubmit">
-            <p class="questions">Què vol fer?</p>
+                <form ref="form" @submit.prevent="handleSubmit">
+                    <p class="questions">Què vol fer?</p>
 
-            <div class="options">
-                <input type="checkbox" :value="500" v-model="prices" @change="updateTotal" v-b-toggle.collapse-1 class="checkboxes" />
-                <label class="labelText">Una pàgina web (500€)</label>
-            </div>
+                    <div class="options">
+                        <input type="checkbox" :value="500" v-model="prices" @change="updateTotal" v-b-toggle.collapse-1 class="checkboxes" />
+                        <label class="labelText">Una pàgina web (500€)</label>
+                    </div>
 
-            <Panel @changeNumPages="updateNumPages" @changeNumLanguages="updateNumLanguages" />
+                    <Panel @changeNumPages="updateNumPages" @changeNumLanguages="updateNumLanguages" />
 
-            <div class="options">
-                <input type="checkbox" :value="300" v-model="prices" @change="updateTotal" class="checkboxes" />
-                <label class="labelText">Una consultoria SEO (300€)</label>
-            </div>
+                    <div class="options">
+                        <input type="checkbox" :value="300" v-model="prices" @change="updateTotal" class="checkboxes" />
+                        <label class="labelText">Una consultoria SEO (300€)</label>
+                    </div>
 
-            <div class="options">
-                <input type="checkbox" :value="200" v-model="prices" @change="updateTotal" class="checkboxes" />
-                <label class="labelText">Una campanya de Google Ads (200€)</label>
-            </div>
+                    <div class="options">
+                        <input type="checkbox" :value="200" v-model="prices" @change="updateTotal" class="checkboxes" />
+                        <label class="labelText">Una campanya de Google Ads (200€)</label>
+                    </div>
 
-            <p class="questions">Preu: {{ totalPrice }}€</p>
+                    <p class="questions">Preu: {{ totalPrice }}€</p>
 
-            <p class="questions">Vol desar el pressupost per a futures consultes, fer-ne un de nou i poder comparar-los i compartir-los fàcilment? Ompli els següents camps!</p>
+                    <p class="questions">Vol desar el pressupost per a futures consultes, fer-ne un de nou i poder comparar-los i compartir-los fàcilment? Ompli els següents camps!</p>
 
-            <div class="budget-form">
-                <label class="label-budget">Nom per al pressupost</label>
-                <input type="text" v-model="budgetName" />
-            </div>
+                    <div class="budget-form">
+                        <label class="label-budget">Nom per al pressupost</label>
+                        <b-form-input type="text" size="sm" v-model="budgetName" />
+                    </div>
 
-            <div class="budget-form">
-                <label class="label-budget">El seu nom</label>
-                <input type="text" v-model="userName" />
-            </div>
+                    <div class="budget-form">
+                        <label class="label-budget">El seu nom</label>
+                        <b-form-input type="text" size="sm" v-model="userName" />
+                    </div>
 
-            <div>
-                <b-button type="submit" variant="success">Enviar</b-button>
-                <router-link to="/">
-                    <b-button type="button" variant="warning">Tornar enrere</b-button>
-                </router-link>
-            </div>
-        </form>
-        </b-col>
-        
-        <b-col cols="6">
-            <BudgetList v-if="budgetList.length" :budgetList="budgetList" />
-        </b-col>
+                    <div>
+                        <b-button type="submit" variant="success">Enviar</b-button>
+                        <router-link to="/">
+                            <b-button type="button" variant="warning">Tornar enrere</b-button>
+                        </router-link>
+                    </div>
+                </form>
+            </b-col>
+            
+            <b-col cols="6">
+                <BudgetList v-if="budgetList.length" :budgetList="budgetList" />
+            </b-col>
         </b-row>
     </b-container>
 </template>
@@ -130,10 +130,24 @@
         margin-bottom: 0.3em;
     }
     .budget-form {
+        display: flex;
+        align-items: center;
         margin-bottom: 1em;
+    }
+    .form-control {
+        margin-left: 0.3em;
+        width: auto;
+        
+        border-color: black;
+    }
+    .form-control:focus {
+        border-color: black;
+        border-width: 2px;
+        box-shadow: none;
     }
     .label-budget{
         width: 142px;
+        margin-bottom: 0;
     }
     .btn-success {
         margin-right: 1em;

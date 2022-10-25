@@ -36,6 +36,7 @@
         width: 3em;
         border-color: transparent;
         text-align: center;
+        margin-left: 0;
     }
     .input-style:focus {
         border-color: black;
