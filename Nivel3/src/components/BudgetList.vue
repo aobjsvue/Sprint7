@@ -1,9 +1,9 @@
 <template>
     <div id="budget">
-        <div>
-            <b-button type="button" variant="primary" @click="sortAlphabetically">Ordenar alfabèticament</b-button>
-            <b-button type="button" variant="info" @click="sortByDate">Ordenar per data</b-button>
-            <b-button type="button" variant="warning" @click="resetOrder">Reiniciar ordre</b-button>
+        <div class="order-buttons">
+            <b-button type="button" variant="primary" @click="sortAlphabetically" size="sm">Ordenar alfabèticament</b-button>
+            <b-button type="button" variant="info" @click="sortByDate" size="sm">Ordenar per data</b-button>
+            <b-button type="button" variant="warning" @click="resetOrder" size="sm">Reiniciar ordre</b-button>
         </div>
 
         <div id="search-bar">
@@ -97,5 +97,24 @@ export default {
         display: flex;
         align-items: center;
         margin-top: 0.3em;
+    }
+    @media (min-width: 460px) and (max-width: 786px) {
+        #budget {
+            margin-top: 1em;
+        }
+    }
+    @media (min-width: 280px) and (max-width: 459px) {
+        #budget {
+            margin-top: 1em;
+        }
+        .order-buttons {
+            display: flex;
+            flex-direction: column;
+            width: 180px;
+            margin: 0;
+        }
+        .btn-info {
+        margin: 0.3em 0;
+        }
     }
 </style>

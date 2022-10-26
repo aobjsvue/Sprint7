@@ -1,7 +1,7 @@
 <template>
     <b-container fluid id="home">
         <b-row>
-            <b-col cols="4">
+            <b-col cols="12" md="5">
                 <form ref="form" @submit.prevent="handleSubmit">
                     <p class="questions">Què vol fer?</p>
 
@@ -37,15 +37,15 @@
                     </div>
 
                     <div>
-                        <b-button type="submit" variant="success">Enviar</b-button>
+                        <b-button type="submit" variant="success" size="sm">Enviar</b-button>
                         <router-link to="/">
-                            <b-button type="button" variant="warning">Tornar enrere</b-button>
+                            <b-button type="button" variant="warning" size="sm">Tornar enrere</b-button>
                         </router-link>
                     </div>
                 </form>
             </b-col>
             
-            <b-col cols="6">
+            <b-col cols="12" md="7" lg="6">
                 <BudgetList v-if="budgetList.length" :budgetList="budgetList" />
             </b-col>
         </b-row>
@@ -151,5 +151,21 @@
     }
     .btn-success {
         margin-right: 1em;
+    }
+    @media (min-width: 390px) and (max-width: 786px) {
+        .row {
+            flex-direction: column;
+        }
+        .questions {
+            width: 325px;
+        }
+    }
+    @media (min-width: 280px) and (max-width: 389px) {
+        .row {
+            flex-direction: column;
+        }
+        .questions {
+            width: 100%;
+        }
     }
 </style>

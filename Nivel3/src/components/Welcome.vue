@@ -20,7 +20,12 @@
         margin: 0;
     }
     .description {
-        width: 40vw;
+        width: 70vw;
         margin: 2em 0;
+    }
+    @media (min-width: 1025px) {
+        .description {
+            width: 40vw;
+        }
     }
 </style>

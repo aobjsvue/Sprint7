@@ -1,5 +1,5 @@
 <template>
-    <b-col cols="10" id="panel">
+    <b-col cols="auto" id="panel">
         <b-collapse id="collapse-1">
             <b-card border-variant="dark">
                 <div class="cardContent">
